@@ -8,9 +8,9 @@ namespace BabyCareProject.Mappings
     {
         public ProductMapping()
         {
-            CreateMap<ResultProductDto, Product>().ReverseMap();
-            CreateMap<CreateProductDto, Product>().ReverseMap();
-            CreateMap<UpdateProductDto, Product>().ReverseMap();
+            CreateMap<Product, ResultProductDto>().ReverseMap();
+            CreateMap<Product, CreateProductDto>().ReverseMap();
+            CreateMap<Product, UpdateProductDto>().ReverseMap();
         }
     }
 }

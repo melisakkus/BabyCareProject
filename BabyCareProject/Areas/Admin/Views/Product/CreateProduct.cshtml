@@ -1,0 +1,34 @@
+﻿@model CreateProductDto
+@{
+    ViewData["Title"] = "CreateProduct";
+}
+
+<h1>Yeni Ders Ekle</h1>
+<form method="post">
+    <label>Ders Görseli</label>
+    <input type="text" asp-for="ImageUrl" class="form-control" />
+    <br />
+
+    <label>Ders Adı</label>
+    <input type="text" asp-for="Title" class="form-control" />
+    <br />
+
+    <label>Açıklama</label>
+    <textarea type="text" asp-for="Description" class="form-control" rows="4"></textarea>
+    <br />
+
+    <label>Fiyat</label>
+    <input type="int" asp-for="Price" class="form-control" />
+    <br />
+
+    <label>Eğitmen</label>
+    <select asp-for="InstructorName" asp-items="@ViewBag.Instructors" class="form-control">
+        <option disabled selected>Lütfen Eğitmen Seçiniz</option>
+    </select>
+    <br />
+
+    <div class="text-center">
+        <button class="btn btn-primary">Kaydet</button>
+    </div>
+
+</form>
