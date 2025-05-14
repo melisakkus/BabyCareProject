@@ -1,8 +1,8 @@
 ﻿namespace BabyCareProject.Dtos.InformationDtos
 {
-    public class UpdateInformationDto
+    public class UpdateInformationDto : IHasId
     {
-        public string InformationId { get; set; }
+        public string Id { get; set; }
         public string Address { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }

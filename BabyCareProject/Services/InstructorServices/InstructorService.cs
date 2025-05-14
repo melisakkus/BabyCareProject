@@ -28,12 +28,12 @@ namespace BabyCareProject.Services.InstructorServices
 
         public async Task DeleteInstructorAsync(string id)
         {
-            await _instructorCollection.DeleteOneAsync(x => x.InstructorId == id);
+            await _instructorCollection.DeleteOneAsync(x => x.Id == id);
         }
 
         public async Task<UpdateInstructorDto> GetInstructorByIdAsync(string id)
         {
-            var instructor = await _instructorCollection.Find(x => x.InstructorId == id).FirstOrDefaultAsync();
+            var instructor = await _instructorCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
             return _mapper.Map<UpdateInstructorDto>(instructor);
         }
 
@@ -46,7 +46,7 @@ namespace BabyCareProject.Services.InstructorServices
         public async Task UpdateInstructorAsync(UpdateInstructorDto updateInstructorDto)
         {
             var instructor = _mapper.Map<Instructor>(updateInstructorDto);
-            await _instructorCollection.FindOneAndReplaceAsync(x=>x.InstructorId==instructor.InstructorId,instructor);
+            await _instructorCollection.FindOneAndReplaceAsync(x=>x.Id==instructor.Id,instructor);
         }
     }
 }

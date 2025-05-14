@@ -1,0 +1,33 @@
+﻿@model CreateEventDto
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Yeni Etkinlik Ekle</h1>
+
+<form method="post">
+    <label>İsim</label>
+    <input type="text" asp-for="Name" class="form-control" />
+    <br />
+
+    <label>Açıklama</label>
+    <input type="text" asp-for="Description" class="form-control" />
+    <br />
+
+    <label>Görsel Url</label>
+    <textarea type="text" asp-for="ImageUrl" class="form-control" rows="4"></textarea>
+    <br />
+
+    <label>Konum</label>
+    <input type="text" asp-for="Location" class="form-control" />
+    <br />
+
+    <label>Tarih</label>
+    <input type="datetime" asp-for="Date" class="form-control" />
+    <br />
+
+    <div class="text-center">
+        <button class="btn btn-primary">Kaydet</button>
+    </div>
+
+</form>

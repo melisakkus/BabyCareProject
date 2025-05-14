@@ -1,0 +1,30 @@
+﻿@model CreateAboutDto
+
+@{
+    ViewData["Title"] = "CreateAbout";
+}
+
+<h1>Yeni Hakkımda Alanı Ekle</h1>
+<form method="post" asp-action="CreateAbout" asp-controller="About" asp-area="Admin">
+    <label>Başlık</label>
+    <input type="text" asp-for="Title" class="form-control" />
+    <br />
+
+    <label>Açıklama</label>
+    <input type="text" asp-for="Description" class="form-control" />
+    <br />
+
+    <label>Maddeler</label>
+    <input type="text" asp-for="Items" class="form-control" />
+    <br />
+
+    <label>Resim Link</label>
+    <input type="text" asp-for="ImageUrl" class="form-control" />
+    <br />
+
+    <div class="text-center">
+        <button class="btn btn-primary">Kaydet</button>
+    </div>
+
+</form>
+

@@ -1,8 +1,8 @@
 ﻿namespace BabyCareProject.Dtos.ProductDtos
 {
-    public class UpdateProductDto
+    public class UpdateProductDto : IHasId
     {
-        public string ProductId { get; set; }
+        public string Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }

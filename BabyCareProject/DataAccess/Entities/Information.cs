@@ -3,11 +3,8 @@ using MongoDB.Bson;
 
 namespace BabyCareProject.DataAccess.Entities
 {
-    public class Information
+    public class Information : IEntity
     {
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string InformationId { get; set; }
         public string Address { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }

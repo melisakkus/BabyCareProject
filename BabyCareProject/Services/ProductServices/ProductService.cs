@@ -29,7 +29,7 @@ namespace BabyCareProject.Services.ProductServices
 
         public async Task DeleteAsync(string id)
         {
-            await _productCollection.DeleteOneAsync(x => x.ProductId == id);
+            await _productCollection.DeleteOneAsync(x => x.Id == id);
         }
 
         public async Task<List<ResultProductDto>> GetAllAsync()
@@ -40,14 +40,14 @@ namespace BabyCareProject.Services.ProductServices
 
         public async Task<UpdateProductDto> GetById(string id)
         {
-            var values = _productCollection.Find(x => x.ProductId == id).FirstOrDefault();
+            var values = _productCollection.Find(x => x.Id == id).FirstOrDefault();
             return _mapper.Map<UpdateProductDto>(values);
         }
 
         public Task UpdateAsync(UpdateProductDto updateProductDto)
         {
             var product = _mapper.Map<Product>(updateProductDto);
-            return _productCollection.FindOneAndReplaceAsync(x => x.ProductId == product.ProductId, product);
+            return _productCollection.FindOneAndReplaceAsync(x => x.Id == product.Id, product);
         }
     }
 }

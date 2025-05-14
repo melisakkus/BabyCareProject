@@ -1,8 +1,8 @@
 ﻿namespace BabyCareProject.Dtos.AboutDtos
 {
-    public class ResultAboutDto
+    public class ResultAboutDto : IHasId
     {
-        public string AboutId { get; set; }
+        public string Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public string[] Items { get; set; }

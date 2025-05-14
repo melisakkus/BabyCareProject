@@ -1,0 +1,36 @@
+﻿@model List<ResultBannerDto>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h3>Öne Çıkan Alan</h3>
+@{
+    int count = 0;
+}
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Başlık</th>
+        <th>Açıklama</th>
+        <th>İşlemler</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td><img src="@item.ImageUrl" style="width:60px;height:60px" />@item.Title</td>
+            <td>@item.Description</td>
+            <td>
+                <a href="/Admin/Banner/Delete/@item.Id" class="btn btn-danger">Sil</a>
+                <a href="/Admin/Banner/Update/@item.Id" class="btn btn-info">Güncelle</a>
+            </td>
+        </tr>
+    }
+
+</table>
+<a href="/Admin/Banner/Create" class="btn btn-info">Yeni Öne Çıkan Alan Ekle</a>
+
+

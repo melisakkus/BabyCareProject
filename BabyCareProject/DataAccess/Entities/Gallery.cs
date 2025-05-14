@@ -3,11 +3,8 @@ using MongoDB.Bson;
 
 namespace BabyCareProject.DataAccess.Entities
 {
-    public class Gallery
+    public class Gallery : IEntity
     {
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string GalleryId { get; set; }
         public string ImageUrl { get; set; }
         public IFormFile ImageFile { get; set; }
 

@@ -3,11 +3,9 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace BabyCareProject.DataAccess.Entities
 {
-    public class Product
+    public class Product : IEntity
     {
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string ProductId { get; set; }
+
         public string Title { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }

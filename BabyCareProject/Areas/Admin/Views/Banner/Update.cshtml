@@ -1,0 +1,27 @@
+﻿@model UpdateBannerDto
+@{
+    ViewData["Title"] = "Update";
+}
+
+<h1>Öne Çıkan Alan Güncelle</h1>
+<form method="post" asp-action="Update" asp-controller="Banner" asp-area="Admin">
+    <input type="hidden" asp-for="Id"/>
+    <label>Başlık</label>
+    <input type="text" asp-for="Title" class="form-control" />
+    <br />
+
+    <label>Açıklama</label>
+    <input type="text" asp-for="Description" class="form-control" />
+    <br />
+
+    <label>Resim Link</label>
+    <input type="text" asp-for="ImageUrl" class="form-control" />
+    <br />
+
+    <div class="text-center">
+        <button class="btn btn-primary">Kaydet</button>
+    </div>
+
+</form>
+
+

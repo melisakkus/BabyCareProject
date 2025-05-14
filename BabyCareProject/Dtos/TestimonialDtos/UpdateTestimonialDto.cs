@@ -1,8 +1,8 @@
 ﻿namespace BabyCareProject.Dtos.TestimonialDtos
 {
-    public class UpdateTestimonialDto
+    public class UpdateTestimonialDto : IHasId
     {
-        public string TestimonialId { get; set; }
+        public string Id { get; set; }
         public string ClientName { get; set; }
         public string Profession { get; set; }
         public string ImageUrl { get; set; }

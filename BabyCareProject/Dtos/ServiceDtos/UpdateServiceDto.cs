@@ -1,8 +1,8 @@
 ﻿namespace BabyCareProject.Dtos.ServiceDtos
 {
-    public class UpdateServiceDto
+    public class UpdateServiceDto : IHasId
     {
-        public string ServiceId { get; set; }
+        public string Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public string Icon { get; set; }

@@ -1,8 +1,8 @@
 ﻿namespace BabyCareProject.Dtos.SubscribeDtos
 {
-    public class ResultSubscribeDto
+    public class ResultSubscribeDto : IHasId
     {
-        public string SubscribeId { get; set; }
+        public string Id { get; set; }
         public string Email { get; set; }
     }
 }

@@ -1,8 +1,8 @@
 ﻿namespace BabyCareProject.Dtos.GalleryDtos
 {
-    public class ResultGalleryDto
+    public class ResultGalleryDto : IHasId
     {
-        public string GalleryId { get; set; }
+        public string Id { get; set; }
         public string ImageUrl { get; set; }
         public IFormFile ImageFile { get; set; }
     }
