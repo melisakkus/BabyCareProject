@@ -3,7 +3,6 @@
     ViewData["Title"] = "Index";
 }
 
-
 <h3>Etkinlikler</h3>
 @{
     int count = 0;
@@ -15,7 +14,7 @@
         <th>Açıklama</th>
         <th>Resim</th>
         <th>Konum</th>
-        <th>Tarih</th>
+        <th>Tarih ve Saat</th>
         <th>İşlemler</th>
     </tr>
 
@@ -28,7 +27,7 @@
             <td>@item.Description</td>
             <td><img src="@item.ImageUrl" style="height:75px ; width:75px" /></td>
             <td>@item.Location</td>
-            <td>@item.Date.ToShortTimeString()</td>
+            <td>@item.Date.ToString("dd-MM-yyyy HH:mm")</td>
             <td>
                 <a href="/Admin/Event/Delete/@item.Id" class="btn btn-danger">Sil</a>
                 <a href="/Admin/Event/Update/@item.Id" class="btn btn-info">Güncelle</a>
@@ -37,6 +36,6 @@
     }
 
 </table>
-<a href="/Admin/Event/Create" class="btn btn-info">Yeni Ders Ekle</a>
+<a href="/Admin/Event/Create" class="btn btn-info">Yeni Etkinlik Ekle</a>
 
 

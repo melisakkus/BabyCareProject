@@ -8,6 +8,6 @@
         public string ImageUrl { get; set; }
         public IFormFile ImageFile { get; set; }
         public string Location { get; set; }
-        public DateTime Date { get; set; }
+        public DateTimeOffset Date { get; set; }
     }
 }

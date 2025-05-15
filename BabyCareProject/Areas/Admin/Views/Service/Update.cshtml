@@ -1,10 +1,9 @@
-﻿@model UpdateEventDto
+﻿@model UpdateServiceDto
 @{
     ViewData["Title"] = "Update";
 }
 
-<h1>Etkinlik Güncelle</h1>
-
+<h1>Hizmet Güncelle</h1>
 <form method="post">
     <input type="hidden" asp-for="Id"/>
 
@@ -16,16 +15,8 @@
     <input type="text" asp-for="Description" class="form-control" />
     <br />
 
-    <label>Görsel Url</label>
-    <textarea type="text" asp-for="ImageUrl" class="form-control" rows="4"></textarea>
-    <br />
-
-    <label>Konum</label>
-    <input type="text" asp-for="Location" class="form-control" />
-    <br />
-
-    <label>Tarih</label>
-    <input type="datetime-local" asp-for="Date" class="form-control" />
+    <label>Ikon</label>
+    <input type="text" asp-for="Icon" class="form-control" />
     <br />
 
     <div class="text-center">

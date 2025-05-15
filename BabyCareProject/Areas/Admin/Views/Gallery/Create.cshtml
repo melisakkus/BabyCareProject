@@ -1,0 +1,15 @@
+﻿@model CreateGalleryDto
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Yeni Resim Ekle</h1>
+<form method="post">
+
+    <label>Resim Linki</label>
+    <input type="text" asp-for="ImageUrl" class="form-control"/>
+    <br />
+    <button class="btn btn-primary">Kaydet</button>
+
+</form>
+

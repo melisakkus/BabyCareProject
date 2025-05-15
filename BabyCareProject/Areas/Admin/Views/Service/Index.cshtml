@@ -1,0 +1,39 @@
+﻿@model List<ResultServiceDto>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Hizmetler</h1>
+@{
+    int count = 0;
+}
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>İsim</th>
+        <th>Açıklama</th>
+        <th>Ikon</th>
+        <th>İşlemler</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td>@item.Name</td>
+            <td>@item.Description</td>
+            <td>@item.Icon</td>
+            <td>
+                <a href="/Admin/Service/Delete/@item.Id" class="btn btn-danger">Sil</a>
+                <a href="/Admin/Service/Update/@item.Id" class="btn btn-info">Güncelle</a>
+            </td>
+        </tr>
+    }
+
+</table>
+<a href="/Admin/Service/Create" class="btn btn-info">Yeni Hizmet Ekle</a>
+
+
+
+
