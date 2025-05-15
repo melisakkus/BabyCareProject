@@ -10,6 +10,8 @@ namespace BabyCareProject.DataAccess.Entities
         public string Description { get; set; }
         public string[] Items { get; set; }
         public string ImageUrl { get; set; }
+        
+        [BsonIgnore]
         public IFormFile ImageFile { get; set; }
     }
 }

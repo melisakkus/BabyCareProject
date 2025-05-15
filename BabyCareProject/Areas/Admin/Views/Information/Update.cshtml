@@ -1,38 +1,51 @@
 ﻿@model UpdateInformationDto
 @{
     ViewData["Title"] = "Update";
+    Layout = "/Areas/Layouts/Views/AdminLayout/Layout.cshtml";
 }
+<div class="container-fluid mt-4">
+    <div class="card shadow-sm">
+        <div class="card-body">
 
-<h1>Bilgi Güncelle</h1>
-<form method="post">
-    <input type="hidden" asp-for="Id"/>
+            <div class="card-header bg-secondary text-white">
+                <h3 class="text-center">Bilgi Güncelle</h3>
+            </div>
 
-    <label>Adres</label>
-    <input type="text" asp-for="Address" class="form-control" />
-    <br />
+            <div class="card-body">
+                <form method="post">
+                    <input type="hidden" asp-for="Id" />
 
-    <label>Telefon Numarası</label>
-    <input type="text" asp-for="Phone" class="form-control" />
-    <br />
+                    <label>Adres</label>
+                    <input type="text" asp-for="Address" class="form-control" />
+                    <br />
 
-    <label>Email</label>
-    <input type="email" asp-for="Email" class="form-control" />
-    <br />
+                    <label>Telefon Numarası</label>
+                    <input type="text" asp-for="Phone" class="form-control" />
+                    <br />
 
-    <label>Sosyal Medya - 1</label>
-    <input type="text" asp-for="SocailMedia1" class="form-control" />
-    <br />
+                    <label>Email</label>
+                    <input type="email" asp-for="Email" class="form-control" />
+                    <br />
 
-    <label>Sosyal Medya - 2</label>
-    <input type="text" asp-for="SocailMedia2" class="form-control" />
-    <br />
+                    <label>Sosyal Medya - 1</label>
+                    <input type="text" asp-for="SocailMedia1" class="form-control" />
+                    <br />
 
-    <label>Sosyal Medya - 3</label>
-    <input type="text" asp-for="SocailMedia3" class="form-control" />
-    <br />
+                    <label>Sosyal Medya - 2</label>
+                    <input type="text" asp-for="SocailMedia2" class="form-control" />
+                    <br />
 
-    <div class="text-center">
-        <button class="btn btn-primary">Kaydet</button>
+                    <label>Sosyal Medya - 3</label>
+                    <input type="text" asp-for="SocailMedia3" class="form-control" />
+                    <br />
+
+                    <div class="text-center">
+                        <button class="btn btn-primary">Kaydet</button>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
     </div>
-
-</form>
+</div>

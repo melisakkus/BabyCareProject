@@ -1,42 +1,70 @@
 ﻿@model UpdateTestimonialDto
 @{
     ViewData["Title"] = "Update";
+    Layout = "/Areas/Layouts/Views/AdminLayout/Layout.cshtml";
 }
 
-<h1>Değerlendirme Güncelleme</h1>
-<form method="post">
-    <input type="hidden" asp-for="Id"/>
-    <label>Ad Soyad</label>
-    <input type="text" asp-for="ClientName" class="form-control" />
-    <br />
+<div class="container-fluid mt-4">
+    <div class="card shadow-sm">
+        <div class="card-body">
 
-    <label>Meslek</label>
-    <input type="text" asp-for="Profession" class="form-control" />
-    <br />
+            <div class="card-header bg-secondary text-white">
+                <h3 class="text-center">Değerlendirme Güncelle</h3>
+            </div>
 
-    <label>Görsel Url</label>
-    <input type="text" asp-for="ImageUrl" class="form-control" />
-    <br />
+            <div class="card-body">
+                <form method="post" enctype="multipart/form-data">
+                    <input type="hidden" asp-for="Id" />
+                    <div class="text-center">
+                        <label class="form-label">Kullanılan Resim : </label>
+                        <br />
+                        <img src="@Model.ImageUrl" style="width:100px;height:100px" alt="Profil Resmi" />
+                        <br />
+                        <div>
+                            <br />
+                            <input type="file" asp-for="ImageFile" class="form-control" />
+                        </div>
+                        <br />
+                    </div>
+                    <input type="hidden" asp-for="ImageUrl" />
 
-    <label>Yorum</label>
-    <input type="text" asp-for="Comment" class="form-control" />
-    <br />
+                    <label>Ad Soyad</label>
+                    <input type="text" asp-for="ClientName" class="form-control" />
+                    <br />
 
-    <label>Puan</label>
-    <select asp-for="ReviewStar" class="form-control">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-    </select>
-    <br />
+                    <label>Meslek</label>
+                    <input type="text" asp-for="Profession" class="form-control" />
+                    <br />
 
-    <div class="text-center">
-        <button class="btn btn-primary">Kaydet</button>
+                    <label>Yorum</label>
+                    <input type="text" asp-for="Comment" class="form-control" />
+                    <br />
+
+                    <label>Puan</label>
+                    <select asp-for="ReviewStar" class="form-control">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <br />
+
+                    <div class="text-center">
+                        <button class="btn btn-secondary">Kaydet</button>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
     </div>
+</div>
 
-</form>
+
+
+
 
 
 

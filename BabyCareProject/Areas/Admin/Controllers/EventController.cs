@@ -1,12 +1,13 @@
 ﻿using BabyCareProject.Dtos.BannerDtos;
 using BabyCareProject.Dtos.EventDtos;
 using BabyCareProject.Services.EventServices;
+using BabyCareProject.Services.ImageServices;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BabyCareProject.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class EventController(IEventService _eventService) : Controller
+    public class EventController(IEventService _eventService, IImageService _imageService) : Controller
     {
         public async Task<IActionResult> Index()
         {
@@ -22,6 +23,10 @@ namespace BabyCareProject.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(CreateEventDto model)
         {
+            if (model.ImageFile != null)
+            {
+                model.ImageUrl = await _imageService.UploadImageAsync(model.ImageFile);
+            }
             await _eventService.CreateAsync(model);
             return RedirectToAction("Index");
         }
@@ -40,6 +45,10 @@ namespace BabyCareProject.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Update(UpdateEventDto dto)
         {
+            if (dto.ImageFile != null)
+            {
+                dto.ImageUrl = await _imageService.UploadImageAsync(dto.ImageFile);
+            }
             await _eventService.UpdateAsync(dto);
             return RedirectToAction("Index");
         }

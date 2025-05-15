@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35431.28
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BabyCareProject", "BabyCareProject\BabyCareProject.csproj", "{8E0B6205-17C0-4AF8-BA39-E55B02093C34}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BabyCareProject", "BabyCareProject\BabyCareProject.csproj", "{8E0B6205-17C0-4AF8-BA39-E55B02093C34}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1EF6C07A-10E3-4E13-B8A9-DFAD0779845E}"
+	ProjectSection(SolutionItems) = preProject
+		template.txt = template.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

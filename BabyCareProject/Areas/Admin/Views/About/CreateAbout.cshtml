@@ -2,29 +2,44 @@
 
 @{
     ViewData["Title"] = "CreateAbout";
+    Layout = "/Areas/Layouts/Views/AdminLayout/Layout.cshtml";
 }
+<div class="container-fluid mt-4">
+    <div class="card shadow-sm">
+        <div class="card-body">
 
-<h1>Yeni Hakkımda Alanı Ekle</h1>
-<form method="post" asp-action="CreateAbout" asp-controller="About" asp-area="Admin">
-    <label>Başlık</label>
-    <input type="text" asp-for="Title" class="form-control" />
-    <br />
+            <div class="card-header bg-secondary text-white">
+                <h3 class="text-center">Yeni Hakkımda Alanı Ekle</h3>
+            </div>
 
-    <label>Açıklama</label>
-    <input type="text" asp-for="Description" class="form-control" />
-    <br />
+            <div class="card-body">
+            <form method="post" asp-action="CreateAbout" asp-controller="About" asp-area="Admin" enctype="multipart/form-data">
 
-    <label>Maddeler</label>
-    <input type="text" asp-for="Items" class="form-control" />
-    <br />
+                <label>Başlık</label>
+                <input type="text" asp-for="Title" class="form-control" />
+                <br />
 
-    <label>Resim Link</label>
-    <input type="text" asp-for="ImageUrl" class="form-control" />
-    <br />
+                <label>Açıklama</label>
+                <input type="text" asp-for="Description" class="form-control" />
+                <br />
 
-    <div class="text-center">
-        <button class="btn btn-primary">Kaydet</button>
+                <label>Maddeler</label>
+                <input type="text" asp-for="Items" class="form-control" />
+                <br />
+
+                <input type="hidden" asp-for="ImageUrl" />
+                <label class="form-label">Resim Yükleyiniz</label>
+                <input type="file" asp-for="ImageFile" class="form-control" />
+                <br />
+
+                <div class="text-center">
+                        <button class="btn btn-secondary">Kaydet</button>
+                </div>
+            </form>
+            </div>
+
+        </div>
     </div>
-
-</form>
+</div>
+<br />
 

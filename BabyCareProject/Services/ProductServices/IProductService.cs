@@ -9,5 +9,6 @@ namespace BabyCareProject.Services.ProductServices
         Task CreateAsync(CreateProductDto createProductDto);
         Task UpdateAsync(UpdateProductDto updateProductDto);
         Task DeleteAsync(string id);
+        Task<int> CountProductAsync();
     }
 }

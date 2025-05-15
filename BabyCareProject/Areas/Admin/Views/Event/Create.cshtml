@@ -1,33 +1,43 @@
 ﻿@model CreateEventDto
 @{
     ViewData["Title"] = "Create";
+    Layout = "/Areas/Layouts/Views/AdminLayout/Layout.cshtml";
 }
+<div class="container-fluid mt-4">
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <div class="card-header bg-secondary text-white">
+                <h3 class="text-center">Yeni Etkinlik Ekle</h3>
+            </div>
 
-<h1>Yeni Etkinlik Ekle</h1>
+            <div class="card-body">
+                <form method="post" enctype="multipart/form-data">
+                    <label>İsim</label>
+                    <input type="text" asp-for="Name" class="form-control" />
+                    <br />
 
-<form method="post">
-    <label>İsim</label>
-    <input type="text" asp-for="Name" class="form-control" />
-    <br />
+                    <label>Açıklama</label>
+                    <input type="text" asp-for="Description" class="form-control" />
+                    <br />
 
-    <label>Açıklama</label>
-    <input type="text" asp-for="Description" class="form-control" />
-    <br />
+                    <input type="hidden" asp-for="ImageUrl" />
+                    <label class="form-label">Resim Yükleyiniz</label>
+                    <input type="file" asp-for="ImageFile" class="form-control" />
+                    <br />
 
-    <label>Görsel Url</label>
-    <textarea type="text" asp-for="ImageUrl" class="form-control" rows="4"></textarea>
-    <br />
+                    <label>Tarih</label>
+                    <input type="datetime-local" asp-for="Date" class="form-control" />
+                    <br />
 
-    <label>Konum</label>
-    <input type="text" asp-for="Location" class="form-control" />
-    <br />
+                    <div class="text-center">
+                        <button class="btn btn-secondary">Kaydet</button>
+                    </div>
 
-    <label>Tarih</label>
-    <input type="datetime-local" asp-for="Date" class="form-control" />
-    <br />
-
-    <div class="text-center">
-        <button class="btn btn-primary">Kaydet</button>
+                </form>
+            </div>
+        </div>
     </div>
+</div>
+<br />
 
-</form>
+

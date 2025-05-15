@@ -20,6 +20,10 @@ namespace BabyCareProject.Services.ProductServices
             _productCollection = database.GetCollection<Product>(databaseSettings.ProductCollectionName);
         }
 
+        public async Task<int> CountProductAsync()
+        {
+            return (int)await _productCollection.CountDocumentsAsync(FilterDefinition<Product>.Empty);
+        }
 
         public async Task CreateAsync(CreateProductDto createProductDto)
         {

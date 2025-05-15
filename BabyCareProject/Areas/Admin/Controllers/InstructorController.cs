@@ -1,11 +1,12 @@
 ﻿using BabyCareProject.Dtos.InstructorDtos;
+using BabyCareProject.Services.ImageServices;
 using BabyCareProject.Services.InstructorServices;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BabyCareProject.Areas.Admin.Controllers
 {
 	[Area("Admin")]
-	public class InstructorController(IInstructorService _instructorService) : Controller
+	public class InstructorController(IInstructorService _instructorService, IImageService _imageService) : Controller
 	{
 		public async Task<IActionResult> Index()
 		{
@@ -21,7 +22,11 @@ namespace BabyCareProject.Areas.Admin.Controllers
 		[HttpPost]
 		public async Task<IActionResult> CreateInstructor(CreateInstructorDto createInstructorDto)
 		{
-			await _instructorService.CreateInstructorAsync(createInstructorDto);
+            if (createInstructorDto.ImageFile != null)
+            {
+                createInstructorDto.ImageUrl = await _imageService.UploadImageAsync(createInstructorDto.ImageFile);
+            }
+            await _instructorService.CreateInstructorAsync(createInstructorDto);
 			return RedirectToAction("Index");	
 		}
 
@@ -40,7 +45,11 @@ namespace BabyCareProject.Areas.Admin.Controllers
 		[HttpPost]
 		public async Task<IActionResult> UpdateInstructor(UpdateInstructorDto updateInstructorDto)
 		{
-			await _instructorService.UpdateInstructorAsync(updateInstructorDto);
+            if (updateInstructorDto.ImageFile != null)
+            {
+                updateInstructorDto.ImageUrl = await _imageService.UploadImageAsync(updateInstructorDto.ImageFile);
+            }
+            await _instructorService.UpdateInstructorAsync(updateInstructorDto);
 			return RedirectToAction("Index");
 		}
 

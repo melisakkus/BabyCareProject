@@ -1,24 +1,36 @@
 ﻿@model CreateServiceDto
 @{
     ViewData["Title"] = "Create";
+    Layout = "/Areas/Layouts/Views/AdminLayout/Layout.cshtml";
 }
 
-<h1>Yeni Hizmet Ekle</h1>
-<form method="post">
-    <label>İsim</label>
-    <input type="text" asp-for="Name" class="form-control" />
-    <br />
+<div class="container-fluid mt-4">
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <div class="card-header bg-secondary text-white">
+                <h3 class="text-center">Yeni Hizmet Ekle</h3>
+            </div>
 
-    <label>Açıklama</label>
-    <input type="text" asp-for="Description" class="form-control" />
-    <br />
+            <div class="card-body">
+                <form method="post">
+                    <label>İsim</label>
+                    <input type="text" asp-for="Name" class="form-control" />
+                    <br />
 
-    <label>Ikon</label>
-    <input type="text" asp-for="Icon" class="form-control" />
-    <br />
+                    <label>Açıklama</label>
+                    <input type="text" asp-for="Description" class="form-control" />
+                    <br />
 
-    <div class="text-center">
-        <button class="btn btn-primary">Kaydet</button>
+                    <label>Ikon</label>
+                    <input type="text" asp-for="Icon" class="form-control" />
+                    <br />
+
+                    <div class="text-center">
+                        <button class="btn btn-secondary">Kaydet</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-
-</form>
+</div>
+<br />

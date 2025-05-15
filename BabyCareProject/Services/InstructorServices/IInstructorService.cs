@@ -9,5 +9,6 @@ namespace BabyCareProject.Services.InstructorServices
         Task CreateInstructorAsync(CreateInstructorDto createInstructorDto);
         Task UpdateInstructorAsync(UpdateInstructorDto updateInstructorDto);
         Task DeleteInstructorAsync(string id);
+        Task<int> CountInstructorAsync();
     }
 }

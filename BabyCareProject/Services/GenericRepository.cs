@@ -12,7 +12,7 @@ namespace BabyCareProject.Services
                           where TCDto : class where TUDto : class, IHasId where TRDto : class, IHasId where TEntity : IEntity
     {
         private readonly IMapper _mapper;
-        private readonly IMongoCollection<TEntity> _collection;
+        protected IMongoCollection<TEntity> _collection;
         public GenericRepository(IMapper mapper, IDatabaseSettings databaseSettings)
         {
             _mapper = mapper;

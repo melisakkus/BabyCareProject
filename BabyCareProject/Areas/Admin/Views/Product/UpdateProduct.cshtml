@@ -1,36 +1,59 @@
 ﻿@model UpdateProductDto
 @{
     ViewData["Title"] = "UpdateProduct";
+    Layout = "/Areas/Layouts/Views/AdminLayout/Layout.cshtml";
 }
+<div class="container-fluid mt-4">
+    <div class="card shadow-sm">
+        <div class="card-body">
 
-<h1>Ders Bilgisi Güncelle</h1>
-<form method="post">
-    <input type="hidden" asp-for="Id"/>
+            <div class="card-header bg-secondary text-white">
+                <h3 class="text-center">Ders Bilgisi Güncelle</h3>
+            </div>
 
-    <label>Ders Görseli</label>
-    <input type="text" asp-for="ImageUrl" class="form-control" />
-    <br />
+            <div class="card-body">
+                <form method="post" enctype="multipart/form-data">
+                    <input type="hidden" asp-for="Id" />
 
-    <label>Ders Adı</label>
-    <input type="text" asp-for="Title" class="form-control" />
-    <br />
+                    <div class="text-center">
+                        <label class="form-label">Kullanılan Resim : </label>
+                        <br />
+                        <img src="@Model.ImageUrl" style="width:100px;height:100px" alt="Profil Resmi" />
+                        <br />
+                        <div>
+                            <br />
+                            <input type="file" asp-for="ImageFile" class="form-control" />
+                        </div>
+                        <br />
+                    </div>
+                    <input type="hidden" asp-for="ImageUrl" />
 
-    <label>Açıklama</label>
-    <textarea type="text" asp-for="Description" class="form-control" rows="4"></textarea>
-    <br />
+                    <label>Ders Adı</label>
+                    <input type="text" asp-for="Title" class="form-control" />
+                    <br />
 
-    <label>Fiyat</label>
-    <input type="int" asp-for="Price" class="form-control" />
-    <br />
+                    <label>Açıklama</label>
+                    <textarea type="text" asp-for="Description" class="form-control" rows="4"></textarea>
+                    <br />
 
-    <label>Eğitmen</label>
-    <select asp-for="InstructorName" asp-items="@ViewBag.Instructors" class="form-control">
-        <option disabled>Lütfen Eğitmen Seçiniz</option>
-    </select>
-    <br />
+                    <label>Fiyat</label>
+                    <input type="int" asp-for="Price" class="form-control" />
+                    <br />
 
-    <div class="text-center">
-        <button class="btn btn-primary">Güncelle</button>
+                    <label>Eğitmen</label>
+                    <select asp-for="InstructorName" asp-items="@ViewBag.Instructors" class="form-control">
+                        <option disabled>Lütfen Eğitmen Seçiniz</option>
+                    </select>
+                    <br />
+
+                    <div class="text-center">
+                        <button class="btn btn-secondary">Güncelle</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
     </div>
+</div>
 
-</form>
+

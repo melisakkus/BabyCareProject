@@ -1,4 +1,5 @@
 ﻿using BabyCareProject.Dtos.ProductDtos;
+using BabyCareProject.Services.ImageServices;
 using BabyCareProject.Services.InstructorServices;
 using BabyCareProject.Services.ProductServices;
 using Microsoft.AspNetCore.Mvc;
@@ -7,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 namespace BabyCareProject.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class ProductController(IProductService _productService,IInstructorService _instructorService) : Controller
+    public class ProductController(IProductService _productService,IInstructorService _instructorService, IImageService _imageService) : Controller
     {
         public async Task<IActionResult> Index()
         {
@@ -35,6 +36,10 @@ namespace BabyCareProject.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateProduct(CreateProductDto createProductDto)
         {
+            if (createProductDto.ImageFile != null)
+            {
+                createProductDto.ImageUrl = await _imageService.UploadImageAsync(createProductDto.ImageFile);
+            }
             await _productService.CreateAsync(createProductDto);
             return RedirectToAction(nameof(Index));
         }
@@ -56,6 +61,10 @@ namespace BabyCareProject.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> UpdateProduct(UpdateProductDto updateProductDto)
         {
+            if (updateProductDto.ImageFile != null)
+            {
+                updateProductDto.ImageUrl = await _imageService.UploadImageAsync(updateProductDto.ImageFile);
+            }
             await _productService.UpdateAsync(updateProductDto);
             return RedirectToAction(nameof(Index));
         }

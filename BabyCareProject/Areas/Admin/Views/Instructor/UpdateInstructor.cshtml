@@ -1,32 +1,53 @@
 ﻿@model UpdateInstructorDto
 @{
     ViewData["Title"] = "UpdateInstructor";
+    Layout = "/Areas/Layouts/Views/AdminLayout/Layout.cshtml";
 }
+<div class="container-fluid mt-4">
+    <div class="card shadow-sm">
+        <div class="card-body">
 
-<h1>Eğitmen Güncelle</h1>
+            <div class="card-header bg-secondary text-white">
+                <h3 class="text-center">Eğitmen Güncelle</h3>
+            </div>
 
-<h1>Yeni Eğitmen Ekle</h1>
-<form method="post">
-    <input type="hidden" asp-for="Id"/>
+            <div class="card-body">
+                <form method="post" enctype="multipart/form-data">
+                    <input type="hidden" asp-for="Id" />
 
-    <label>Profil Resmi</label>
-    <input type="text" asp-for="ImageUrl" class="form-control" />
-    <br />
+                    <div class="text-center">
+                        <label class="form-label">Kullanılan Resim : </label>
+                        <br />
+                        <img src="@Model.ImageUrl" style="width:100px;height:100px" alt="Profil Resmi" />
+                        <br />
+                        <div>
+                            <br />
+                            <input type="file" asp-for="ImageFile" class="form-control" />
+                        </div>
+                        <br />
+                    </div>
+                    <input type="hidden" asp-for="ImageUrl" />
 
-    <label>Ad</label>
-    <input type="text" asp-for="FirstName" class="form-control" />
-    <br />
+                    <label>Ad</label>
+                    <input type="text" asp-for="FirstName" class="form-control" />
+                    <br />
 
-    <label>Soyad</label>
-    <input type="text" asp-for="LastName" class="form-control" />
-    <br />
+                    <label>Soyad</label>
+                    <input type="text" asp-for="LastName" class="form-control" />
+                    <br />
 
-    <label>Ünvan</label>
-    <input type="text" asp-for="Title" class="form-control" />
-    <br />
+                    <label>Ünvan</label>
+                    <input type="text" asp-for="Title" class="form-control" />
+                    <br />
 
-    <div class="text-center">
-        <button class="btn btn-primary">Kaydet</button>
+                    <div class="text-center">
+                        <button class="btn btn-secondary">Kaydet</button>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
     </div>
+</div>
 
-</form>

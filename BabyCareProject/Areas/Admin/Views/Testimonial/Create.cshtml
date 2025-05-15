@@ -1,41 +1,58 @@
 ﻿@model CreateTestimonialDto
 @{
     ViewData["Title"] = "Create";
+    Layout = "/Areas/Layouts/Views/AdminLayout/Layout.cshtml";
 }
 
-<h1>Yeni Değerlendirme Ekle</h1>
-<form method="post">
-    <label>Ad Soyad</label>
-    <input type="text" asp-for="ClientName" class="form-control" />
-    <br />
+<div class="container-fluid mt-4">
+    <div class="card shadow-sm">
+        <div class="card-body">
 
-    <label>Meslek</label>
-    <input type="text" asp-for="Profession" class="form-control" />
-    <br />
+            <div class="card-header bg-secondary text-white">
+                <h3 class="text-center">Yeni Değerlendirme Ekle</h3>
+            </div>
 
-    <label>Görsel Url</label>
-    <input type="text" asp-for="ImageUrl" class="form-control" />
-    <br />
+            <div class="card-body">
 
-    <label>Yorum</label>
-    <input type="text" asp-for="Comment" class="form-control" />
-    <br />
+                <form method="post" enctype="multipart/form-data">
+                    <label>Ad Soyad</label>
+                    <input type="text" asp-for="ClientName" class="form-control" />
+                    <br />
 
-    <label>Puan</label>
-    <select asp-for="ReviewStar" class="form-control">
-        <option selected disabled>Lütfen seçim yapınız.</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-    </select>
-    <br />
+                    <label>Meslek</label>
+                    <input type="text" asp-for="Profession" class="form-control" />
+                    <br />
 
-    <div class="text-center">
-        <button class="btn btn-primary">Kaydet</button>
+                    <input type="hidden" asp-for="ImageUrl" />
+                    <label class="form-label">Resim Yükleyiniz</label>
+                    <input type="file" asp-for="ImageFile" class="form-control" />
+                    <br />
+
+                    <label>Yorum</label>
+                    <input type="text" asp-for="Comment" class="form-control" />
+                    <br />
+
+                    <label>Puan</label>
+                    <select asp-for="ReviewStar" class="form-control">
+                        <option selected disabled>Lütfen seçim yapınız.</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <br />
+
+                    <div class="text-center">
+                        <button class="btn btn-secondary">Kaydet</button>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
     </div>
-
-</form>
+</div>
+<br />
 
 

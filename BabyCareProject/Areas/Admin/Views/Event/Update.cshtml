@@ -1,36 +1,54 @@
 ﻿@model UpdateEventDto
 @{
     ViewData["Title"] = "Update";
+    Layout = "/Areas/Layouts/Views/AdminLayout/Layout.cshtml";
 }
 
-<h1>Etkinlik Güncelle</h1>
+<div class="container-fluid mt-4">
+    <div class="card shadow-sm">
+        <div class="card-body">
 
-<form method="post">
-    <input type="hidden" asp-for="Id"/>
+            <div class="card-header bg-secondary text-white">
+                <h3 class="text-center">Etkinlik Güncelle</h3>
+            </div>
 
-    <label>İsim</label>
-    <input type="text" asp-for="Name" class="form-control" />
-    <br />
+            <div class="card-body">
+                <form method="post" enctype="multipart/form-data">
+                    <input type="hidden" asp-for="Id" />
 
-    <label>Açıklama</label>
-    <input type="text" asp-for="Description" class="form-control" />
-    <br />
+                    <div class="text-center">
+                        <label class="form-label">Kullanılan Resim : </label>
+                        <br />
+                        <img src="@Model.ImageUrl" style="width:100px;height:100px" alt="Profil Resmi" />
+                        <br />
+                        <div>
+                            <br />
+                            <input type="file" asp-for="ImageFile" class="form-control" />
+                        </div>
+                        <br />
+                    </div>
+                    <input type="hidden" asp-for="ImageUrl" />
 
-    <label>Görsel Url</label>
-    <textarea type="text" asp-for="ImageUrl" class="form-control" rows="4"></textarea>
-    <br />
+                    <label>İsim</label>
+                    <input type="text" asp-for="Name" class="form-control" />
+                    <br />
 
-    <label>Konum</label>
-    <input type="text" asp-for="Location" class="form-control" />
-    <br />
+                    <label>Açıklama</label>
+                    <input type="text" asp-for="Description" class="form-control" />
+                    <br />
 
-    <label>Tarih</label>
-    <input type="datetime-local" asp-for="Date" class="form-control" />
-    <br />
+                    <label>Tarih</label>
+                    <input type="datetime-local" asp-for="Date" class="form-control" />
+                    <br />
 
-    <div class="text-center">
-        <button class="btn btn-primary">Güncelle</button>
+                    <div class="text-center">
+                        <button class="btn btn-primary">Güncelle</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
     </div>
+</div>
 
-</form>
 

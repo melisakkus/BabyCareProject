@@ -4,6 +4,7 @@ using BabyCareProject.Services.AboutServices;
 using BabyCareProject.Services.BannerServices;
 using BabyCareProject.Services.EventServices;
 using BabyCareProject.Services.GalleryServices;
+using BabyCareProject.Services.ImageServices;
 using BabyCareProject.Services.InformationServices;
 using BabyCareProject.Services.InstructorServices;
 using BabyCareProject.Services.ProductServices;
@@ -37,6 +38,7 @@ builder.Services.AddScoped<ITestimonialService, TestimonialService>();
 builder.Services.AddScoped<ISubscribeService, SubscribeService>();
 builder.Services.AddScoped<IServiceService, ServiceService>();
 builder.Services.AddScoped<IInformationService, InformationService>();
+builder.Services.AddScoped<IImageService, ImageService>();
 
 builder.Services.AddControllersWithViews();
 

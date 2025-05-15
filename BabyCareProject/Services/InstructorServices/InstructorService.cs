@@ -48,5 +48,10 @@ namespace BabyCareProject.Services.InstructorServices
             var instructor = _mapper.Map<Instructor>(updateInstructorDto);
             await _instructorCollection.FindOneAndReplaceAsync(x=>x.Id==instructor.Id,instructor);
         }
+
+        public async Task<int> CountInstructorAsync()
+        {
+            return (int)await  _instructorCollection.CountDocumentsAsync(FilterDefinition<Instructor>.Empty);
+        }
     }
 }
