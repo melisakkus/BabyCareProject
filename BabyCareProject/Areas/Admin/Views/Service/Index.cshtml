@@ -28,7 +28,14 @@
                             <th>@count</th>
                             <td>@item.Name</td>
                             <td>@item.Description.Substring(0,100)...</td>
-                            <td>@item.Icon</td>
+                            <td>@if(item.Icon is null)
+                                {
+                                    <span class="badge bg-secondary">Yok</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-success">Var</span>
+                                }
                             <td>
                                 <a href="/Admin/Service/Delete/@item.Id" class="btn btn-danger">Sil</a> &nbsp;
                                 <a href="/Admin/Service/Update/@item.Id" class="btn btn-secondary">Güncelle</a>

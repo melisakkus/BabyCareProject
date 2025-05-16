@@ -1,4 +1,5 @@
-﻿using BabyCareProject.Dtos.ProductDtos;
+﻿using BabyCareProject.DataAccess.Entities;
+using BabyCareProject.Dtos.ProductDtos;
 using BabyCareProject.Services.ImageServices;
 using BabyCareProject.Services.InstructorServices;
 using BabyCareProject.Services.ProductServices;
@@ -8,7 +9,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 namespace BabyCareProject.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class ProductController(IProductService _productService,IInstructorService _instructorService, IImageService _imageService) : Controller
+    public class ProductController(IProductService _productService, IInstructorService _instructorService, IImageService _imageService) : Controller
     {
         public async Task<IActionResult> Index()
         {
@@ -40,11 +41,16 @@ namespace BabyCareProject.Areas.Admin.Controllers
             {
                 createProductDto.ImageUrl = await _imageService.UploadImageAsync(createProductDto.ImageFile);
             }
+
+            var instructors = await _instructorService.GetAllInstructorAsync();
+            var matchingInstructor = instructors.FirstOrDefault(x => x.FullName == createProductDto.InstructorName);
+            createProductDto.InstructorImage = matchingInstructor.ImageUrl;
+
             await _productService.CreateAsync(createProductDto);
             return RedirectToAction(nameof(Index));
         }
 
-        public async Task<IActionResult> UpdateProduct (string id)
+        public async Task<IActionResult> UpdateProduct(string id)
         {
             var instructors = await _instructorService.GetAllInstructorAsync();
             ViewBag.Instructors = (from x in instructors
@@ -65,6 +71,11 @@ namespace BabyCareProject.Areas.Admin.Controllers
             {
                 updateProductDto.ImageUrl = await _imageService.UploadImageAsync(updateProductDto.ImageFile);
             }
+
+            var instructors = await _instructorService.GetAllInstructorAsync();
+            var matchingInstructor = instructors.FirstOrDefault(x => x.FullName == updateProductDto.InstructorName);
+            updateProductDto.InstructorImage = matchingInstructor.ImageUrl;
+
             await _productService.UpdateAsync(updateProductDto);
             return RedirectToAction(nameof(Index));
         }
