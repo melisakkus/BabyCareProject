@@ -1,29 +1,30 @@
 # BabyCareProject - MongoDB & ASP.NET Core Web Application
 
-BabyCareProject, anaokulunun sunduğu hizmetleri, etkinlikleri, eğitmenleri ve ders bilgilendirmelerini kullanıcı dostu bir arayüzle sunan modern bir platformdur. ASP.NET Core Web Application mimarisiyle geliştirilen projede, MongoDB ile NoSQL veri yönetimi sağlanırken, MongoDbDriver ile güçlü ve esnek veritabanı işlemleri gerçekleştirilmiştir.
+BabyCareProject is a modern platform that presents kindergarten services, events, instructors, and class announcements through a user-friendly interface. Developed with the ASP.NET Core Web Application architecture, the project provides NoSQL data management using MongoDB, while robust and flexible database operations are performed via MongoDbDriver.
 
-## 📁 Backend Tarafı:
+## 📁 Backend Side:
 
-•	MongoDB kullanılarak veri saklama işlemleri gerçekleştirildi.
+• Data storage operations were performed using MongoDB.
 
-•	MongoDB.Driver ile veritabanı bağlantısı kuruldu.
+• Database connection was established using MongoDB.Driver.
 
-•	Generic Repository kullanılarak modüler ve ölçeklenebilir servis mimarisi oluşturuldu.
+• A modular and scalable service architecture was created using Generic Repository.
 
-•	DTO'lar ile veri transferi optimize edildi. 
+• Data transfer was optimized with DTOs. 
 
-•	 AutoMapper ile veriler sorunsuz ve hızlı şekilde eşleştirildi.
+• Data was mapped seamlessly and rapidly using AutoMapper.
 
-•	Area kullanılarak admin işlemleri Admin Paneli altında toplandı.
+• Admin operations were grouped under the Admin Panel using Area.
 
-## 🎨 UI (Kullanıcı Arayüzü) Tarafı:
+## 🎨 UI (User Interface) Side:
 
-•	ViewComponent yapısıyla modüler ve yönetilebilir hale getirildi.
+• Made modular and manageable using the ViewComponent structure.
 
-•	AJAX kullanılarak abonelik işlemleri kullanıcıyı sayfadan koparmadan dinamik şekilde gerçekleştirildi.
+• Subscription processes were executed dynamically without redirecting the user, using AJAX.
 
 
-### 🚀 UI Görselleri
+### 🚀 UI Screenshots
+
 ![2025-05-16_13-29-21](https://github.com/user-attachments/assets/de2f29b6-af9a-4e48-a78f-73e496a2d852)
 
 ![2025-05-16_13-29-44](https://github.com/user-attachments/assets/e74be1ee-0eb2-482f-a7a5-969fd95b0041)
@@ -43,7 +44,7 @@ BabyCareProject, anaokulunun sunduğu hizmetleri, etkinlikleri, eğitmenleri ve 
 ![2025-05-16_13-32-31](https://github.com/user-attachments/assets/f320fc38-0da9-4c1d-a590-6897882a4661)
 
 
-### 🚀 Admin Görselleri
+### 🚀 Admin Screenshots
 
 ![2025-05-16_13-34-08](https://github.com/user-attachments/assets/2d64bd10-cc1b-4e20-9ad8-212653bdb30b)
 
